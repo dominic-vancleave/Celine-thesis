@@ -1,0 +1,60 @@
+The below template represents how EACH TANK TILE is characterized within the LabelImg data
+This framework is used in the subsequent code when finding certain characteristics (ie state, size, location, etc)
+
+{"type": "FeatureCollection", 
+ "features": [
+	{
+		"id": "0", 
+		"type": "Feature", 
+		"properties": 
+			{
+				"chip_name": 
+					[
+						"m_4007327_nw_18_060_20190809_00_01", 
+						"m_4007327_nw_18_060_20190809_00_02"
+					], 
+				"diameter (m)": 39.6, 
+				"maxx_polygon_pixels": 1040, 
+				"maxy_polygon_pixels": 379, 
+				"merged_bbox": true, 
+				"minx_polygon_pixels": 973, 
+				"miny_polygon_pixels": 313, 
+				"nw_corner_polygon_lat": 40.62575338189583, 
+				"nw_corner_polygon_lon": -73.74546554131142, 
+				"object_class": "closed_roof_tank", 
+				"polygon_vertices_lon_lat": 
+					[
+						[-73.74546554131142, 40.62575338189583], 
+						[-73.74546554131142, 40.625391554481595], 
+						[-73.7449970174253, 40.625391554481595], 
+						[-73.7449970174253, 40.62575338189583]
+					], 
+				"polygon_vertices_pixels": 
+					[
+						[973, 313], 
+						[973, 379], 
+						[1040, 379], 
+						[1040, 313]
+					], 
+				"se_corner_polygon_lat": 40.625391554481595, 
+				"se_corner_polygon_lon": -73.7449970174253, 
+				"state": "New York", 
+				"tile_name": "m_4007327_nw_18_060_20190809", 
+				"utm_projection": "EPSG:26918"
+			}, 
+		"geometry": 
+			{
+				"type": "Polygon", 
+				"coordinates": 
+					[
+						[
+							[-73.74546554131142, 40.62575338189583], 
+							[-73.74546554131142, 40.625391554481595], 
+							[-73.7449970174253, 40.625391554481595], 
+							[-73.7449970174253, 40.62575338189583], 
+							[-73.74546554131142, 40.62575338189583]
+						]
+					]
+			}
+	}
+}
