@@ -1,8 +1,18 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct 12 17:20:03 2022
-
-@author: domin
+Last Updated on Fri Jan 27 2023
+@author: Dominic Van Cleave-Schottland
+"""
+"""
+The code below taks in the geographic location data of TRI, Tier II, and LabelImg tanks in Nebraska 
+and outputs a map displaying these tanks within Nebraska. Each dot on the map represents one AST. 
+Color Code:
+    - Blue = TRI
+    - Red = LabelImg
+    - Magenta = Tier II
+The site used for creating and displaying a map of Nebraska is:
+https://www.openstreetmap.org/
 """
 #%% Importing Libraries
 import pandas as pd
@@ -34,10 +44,14 @@ neb_boundary = (-104.2, -95.1,
                   39.9,  43.1)
 
 neb_map = plt.imread('Nebraska_map.png')
+
 #%% Plotting Tank Coords
 fig = plt.figure(figsize=(25,12), dpi=100)
 ax = fig.add_subplot(111)
 
+### NOTE ###
+# The below code for displaying each dataset can be commented out to create
+# comparisons just between two datasets (ie. Tier II and TRI)
 ax.scatter(longitudes_tri, latitudes_tri, zorder = 2, alpha = 0.3, c ='b', 
            s = 10, marker = 's', label = 'TRI Data')
 ax.scatter(longitudes_lab, latitudes_lab, zorder = 3, alpha = 0.3, c = 'r', 
@@ -45,7 +59,7 @@ ax.scatter(longitudes_lab, latitudes_lab, zorder = 3, alpha = 0.3, c = 'r',
 ax.scatter(longitudes_tier2, latitudes_tier2, zorder = 1, alpha = 0.3, c = 'm', 
            s= 10, marker = 'D', label = 'Tier II Data')
 
-ax.set_title('Plotting Tank Data on Nebraska Map (Overlap)')
+ax.set_title('Plotting Tank Data on Nebraska Map (Overlap)') # if comparing only two, change title
 ax.set_xlim(neb_boundary[0], neb_boundary[1])
 ax.set_ylim(neb_boundary[2], neb_boundary[3])
 plt.xlabel('Longitude')
@@ -53,4 +67,5 @@ plt.ylabel('Latitude')
 
 plt.legend()
 ax.imshow(neb_map, zorder = 0, extent = neb_boundary, aspect = 'equal')
+# If comparing only two datasets, change .png file name
 plt.savefig('Nebraska_tanks_comparison.png', bbox_inches='tight',pad_inches = 0.1)
