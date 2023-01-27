@@ -5,7 +5,10 @@ Last Updated on Fri Jan 27 2023
 @author: Dominic Van Cleave-Schottland
 """
 """
-The code below taks in the geographic location data of TRI tanks in Nebraska and 
+The code below taks in the geographic location data of TRI tanks in Nebraska and outputs a 
+map displaying these tanks within Nebraska. Each dot on the map represents one AST. The site
+used for creating and displaying a map of Nebraska is:
+https://www.openstreetmap.org/
 """
 #%% Importing Libraries
 import pandas as pd
@@ -22,6 +25,7 @@ neb_boundary = (-104.2, -95.1,
                   39.9,  43.1)
 
 neb_map = plt.imread('Nebraska_map.png')
+
 #%% Plotting Tank Coords
 fig = plt.figure(figsize=(25,12), dpi=100)
 ax = fig.add_subplot(111)
