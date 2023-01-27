@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct 12 17:20:03 2022
-
-@author: domin
+Last Updated on Fri Jan 27 2023
+@author: Dominic Van Cleave-Schottland
+"""
+"""
+The code below taks in the geographic location data of TRI tanks in Nebraska and 
 """
 #%% Importing Libraries
 import pandas as pd
